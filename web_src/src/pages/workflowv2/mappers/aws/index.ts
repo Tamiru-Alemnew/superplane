@@ -8,6 +8,7 @@ import { buildActionStateRegistry } from "../utils";
 import { scanImageMapper } from "./ecr/scan_image";
 import { onPackageVersionTriggerRenderer } from "./codeartifact/on_package_version";
 import { getPackageVersionMapper } from "./codeartifact/get_package_version";
+import { onAlarmTriggerRenderer } from "./cloudwatch/on_alarm";
 
 export const componentMappers: Record<string, ComponentBaseMapper> = {
   "lambda.runFunction": runFunctionMapper,
@@ -18,6 +19,7 @@ export const componentMappers: Record<string, ComponentBaseMapper> = {
 };
 
 export const triggerRenderers: Record<string, TriggerRenderer> = {
+  "cloudwatch.onAlarm": onAlarmTriggerRenderer,
   "codeArtifact.onPackageVersion": onPackageVersionTriggerRenderer,
   "ecr.onImagePush": onImagePushTriggerRenderer,
   "ecr.onImageScan": onImageScanTriggerRenderer,

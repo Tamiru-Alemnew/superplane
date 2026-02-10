@@ -66,6 +66,7 @@ export const APP_LOGO_MAP: Record<string, string | Record<string, string>> = {
   render: renderIcon,
   dockerhub: dockerIcon,
   aws: {
+    cloudwatch: awsIcon,
     lambda: awsLambdaIcon,
   },
 };
